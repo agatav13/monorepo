@@ -1,6 +1,7 @@
 {
   "name": "web",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "vite dev --port 3000",
@@ -10,14 +11,17 @@
   },
   "license": "ISC",
   "dependencies": {
+    "@clerk/clerk-react": "^5.2.5",
+    "antd": "^5.18.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.0"
   },
   "devDependencies": {
-    "serve": "^14.2.3",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^4.3.1",
+    "serve": "^14.2.3",
     "types": "workspace:*",
     "typescript": "^5.4.5",
     "vite": "^5.3.1"

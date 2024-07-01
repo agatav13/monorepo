@@ -1,14 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './index.css'
-import App from './App';
+import MainPage from './mainPage/MainPage';
+import AdminPanel from './adminPanel/AdminPanel';
+import ErrorPage from './shared/ErrorPage';
 
-const app = document.getElementById('app');
-if (app) {
-    ReactDOM.createRoot(app).render(
-        <React.StrictMode>
-            <App />
-        </React.StrictMode>
-    );
-}
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <MainPage />,
+        errorElement: <ErrorPage />
+    },
+    {
+        path: "/admin",
+        element: <AdminPanel />,
+        errorElement: <ErrorPage />
+    }
+]);
+
+ReactDOM.createRoot(document.getElementById('app')!).render(
+    <React.StrictMode>
+        <RouterProvider router={router} />
+    </React.StrictMode>
+);
